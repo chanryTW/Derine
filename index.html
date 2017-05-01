@@ -5,7 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<script src="mainjs_min.js"></script>
+	<script src="js/mainjs_min.js"></script>
+	
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEX6yjQqDUmbXLai34ArTt9ypIyjjIHes&libraries=places"></script>
+	<link href="map.css" type="text/css" rel="stylesheet">
 	
     <title>Icaht測試</title>
     <link rel="stylesheet" href="style.css">
@@ -20,9 +23,11 @@
       <div class="spoken-response__text"></div>
     </div>
 
+	<!-- 商店列表 -->
+	<div id="result1"></div>
+	
     <h1>長按可拖曳。</h1>
 	<p>語音功能測試中</p>
-
 	
     <div class="raster hide">
         <ul class="layer">
@@ -44,13 +49,37 @@
         </ul>
     </div>
 
-	
-	
     <button class="fab" href="#"></button>
 </div>
-    
+
+<!-- 地圖功能 -->
+	<div id="result">Result</div>
+
+    <div id="container">
+		<p><input id="addr" value="" placeholder="輸入地址" >
+		<select id="selection1">
+			<option disabled selected value> -- 選擇類型 -- </option>
+			<option value="restaurant">餐廳</option>
+			<option value="store">商店</option>
+			<option value="hospital">醫院</option>
+			<option value="gym">健身房</option>
+			<option value="gas_station">加油站</option>              
+		</select>
+		<select id="selection2">
+			<option disabled selected value> -- 選擇範圍 -- </option>
+			<option>500</option>
+			<option>1000</option>
+			<option>1500</option>
+		</select>
+			<button id="query">搜尋</button></p>                         
+	</div>
+    <div id="mymap" style="width:800px;height:800px;" a></div>
+
+<!-- 結尾JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js"></script>
-    <script src="draggable_min.js"></script>
+    <script src="js/draggable_min.js"></script>
+	
+	<script src="map.js" type="text/javascript" charset="utf-8"></script>
 	
 </body>
 </html>
