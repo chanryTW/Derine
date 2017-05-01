@@ -18,6 +18,8 @@ body {
     background-size:contain;
 }
 
+
+
 .wrapp {
     width: 100%;
     height: 100%;
@@ -138,6 +140,7 @@ button.fab:active{
 }
 
 
+
 .blink {
     background: rgb(145, 208, 189);
     transition: background 100ms ease-in-out 0;
@@ -162,4 +165,14 @@ button.elevated:active {
 
 .icon {
     margin: 18px;
+}
+
+#mymap {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+	width:90%;
+	height:40%;
+    display:none;
+    margin: auto;
 }

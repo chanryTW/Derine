@@ -3,7 +3,7 @@
       $speechInput,
       recognition,
       messageRecording = "辨識中...",
-      messageCouldntHear = "蛤.你說啥",
+      messageCouldntHear = "蛤.請再說一次",
       messageInternalError = "發生伺服器錯誤惹",
       messageSorry = "說說別的";
 
@@ -97,11 +97,24 @@
       }
 
       if (val !== messageRecording) { //不是"讀取中"那段文字的化
-        var msg = new SpeechSynthesisUtterance();//語音念出文字
-        msg.voiceURI = "native";
-        msg.text = val;
-        msg.lang = "zh-TW";//語音語言
-        window.speechSynthesis.speak(msg);
+		switch (val) {
+			case "00001": //如果是00001事件
+			  val = "這是您目前的位置";
+			  var msg = new SpeechSynthesisUtterance();
+			  msg.voiceURI = "native";
+			  msg.text = val;
+			  window.speechSynthesis.speak(msg);
+			  startmap();
+			  document.getElementById("mymap").style.display="inline-block";
+			　break;
+			default:
+			  var msg = new SpeechSynthesisUtterance();//語音念出文字
+			  msg.voiceURI = "native";
+			  msg.text = val;
+			  msg.lang = "zh-TW";//語音語言
+			  window.speechSynthesis.speak(msg);
+			  document.getElementById("mymap").style.display="none";
+		}
       }
 
       $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);//放入回應
