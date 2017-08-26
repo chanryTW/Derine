@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1NXrujzO7R38CUF0CCyOgCM6_uZjXBOY&libraries=places"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js"></script> <!-- 懸浮功能 -->
+	<script src="js/jquery-3.2.1.min.js"></script> <!-- 語音和AJAX用 -->
+    <title>Icaht測試</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapp">
+
+	<input id="speech" type="text" placeholder="請點按鈕發話...">
+    <div id="spokenResponse" class="spoken-response">
+      <div class="spoken-response__text"></div>
+    </div>
+	
+    <h1>長按可拖曳。</h1>
+	<p id="test001">語音功能測試中</p>
+	
+    <div class="raster hide">
+        <ul class="layer">
+            <li class="point-disabled" id="0"></li>
+            <li class="point-disabled" id="1"></li>
+            <li class="point-active" id="2"></li>
+            <li class="point-disabled" id="3"></li>
+            <li class="point-disabled" id="4"></li>
+            <li class="point-active" id="5"></li>
+            <li class="point-disabled" id="6"></li>
+            <li class="point-active" id="7"></li>
+            <li class="point-active" id="8"></li>
+            <li class="point-active" id="9"></li>
+            <li class="point-active" id="10"></li>
+            <li class="point-active" id="11"></li>
+            <li class="point-active" id="12"></li>
+            <li class="point-active" id="13"></li>
+            <li class="point-active" id="14"></li>
+        </ul>
+    </div>
+
+    <button class="fab" href="#"></button>
+</div>
+
+<!-- 地圖功能 -->
+    <div id="mymap"></div>
+    <div id="place-details"></div>
+	
+<!-- 結尾JS -->
+	<script src="js/mainjs.js"></script>
+    <script src="js/draggable.js"></script>
+	<script src="js/instruction.js" type="text/javascript" charset="utf-8"></script>
+	
+</body>
+</html>
