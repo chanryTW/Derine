@@ -190,18 +190,32 @@
         break;
       case "00010"://搜尋功能 
         var SearchKey = val.substr(5);
-        val = "幫您搜尋"+SearchKey;
+        val = "好的，幫您搜尋"+SearchKey;
         msg.text = val;
         window.speechSynthesis.speak(msg);
         Start00010(SearchKey);
         break;
       case "00011": //導航功能
         var SearchKey = val.substr(5);
-        val = "幫您導航到"+SearchKey;
+        val = "好的，幫您導航到"+SearchKey;
         msg.text = val;
         window.speechSynthesis.speak(msg);
         Start00011(SearchKey);
         break;
+
+      case "99901": //模擬 附近有什麼景點 假設人在林邊車站
+        val = "推薦您以下景點，一 福記古宅、距離550公尺，二 慈濟宮、距離290公尺，三 東隆宮、距離10公里";
+        msg.text = val;
+        window.speechSynthesis.speak(msg);
+        Start00002("廟宇");
+        break;
+      case "99902": //模擬 屏東有什麼好玩的 假設人在夢時代
+        val = "推薦您以下景點，一 林邊光采濕地、距離43公里，二 海神宮風景區、距離59公里，三 大鵬灣國家風景區、距離45公里";
+        msg.text = val;
+        window.speechSynthesis.speak(msg);
+        Start00002("公園");
+        break;
+
 			default:
 			  msg.text = val;
 			  window.speechSynthesis.speak(msg);

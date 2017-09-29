@@ -135,17 +135,22 @@ function Start00003_7(SearchKey1,SearchKey2,TestVal) {
   var rain = "";
   var sun = "";
   var hotcold = "";
-
   $.ajax({
     url:url,
     async: false,
     dataType: 'json',
     success: function(data) {
       var weather = function(w) {
+        console.log(w);        
         var weatherText = "";
         switch (w) {
           case 'Thunderstorms':
               weatherText = '可能有雷雨';
+              rain = '請記得攜帶雨具';
+              sun = '不會出太陽，請記得攜帶雨具';
+              break;
+          case 'Scattered Thunderstorms':
+              weatherText = '有局部雷雨';
               rain = '請記得攜帶雨具';
               sun = '不會出太陽，請記得攜帶雨具';
               break;
