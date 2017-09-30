@@ -10,7 +10,7 @@ function Start00001() {
 	function parsePosition(pos) {
 		//由pos.coords取出latitude及longitude
 		var curLatLng = new google.maps.LatLng(
-			22.431904, 120.515577);
+			22.593095, 120.310215);
 		//創建新地圖
 		var gc = new google.maps.Geocoder();
 		var mymap = new google.maps.Map($('#mymap').get(0), {
@@ -35,7 +35,7 @@ function Start00001() {
 function Start00002(SearchKey) {
 
   navigator.geolocation.getCurrentPosition(function(position) {
-    var currentLocation = {lat: 22.431904, lng: 120.515577};
+    var currentLocation = {lat: 22.593095, lng: 120.310215};
     
     var map = new google.maps.Map(document.getElementById('mymap'), {
       center: currentLocation,
@@ -411,7 +411,7 @@ function Start00011(SearchKey) {
 	function parsePosition(pos) {
 		//由pos.coords取出latitude及longitude
 		var curLatLng = new google.maps.LatLng(
-      22.431904, 120.515577);
+      22.593095, 120.310215);
       open("https://www.google.com.tw/maps/dir/"+pos.coords.latitude+","+pos.coords.longitude+"/"+SearchKey,'_self');
   }
 }
