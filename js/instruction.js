@@ -35,7 +35,7 @@ function Start00001() {
 function Start00002(SearchKey) {
 
   navigator.geolocation.getCurrentPosition(function(position) {
-    var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
+    var currentLocation = {lat: 22.431904, lng: 120.515577};
     
     var map = new google.maps.Map(document.getElementById('mymap'), {
       center: currentLocation,
@@ -58,7 +58,7 @@ function Start00002(SearchKey) {
 
     function searchResults(results, status) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        var aims = results.slice(0, 5);
+        var aims = results.slice(0, 3);
         for (var i = 0; i < results.length; i++) {
           aims.forEach(createMarker);
         } 

@@ -167,10 +167,10 @@ button.fab{
 /* Derine回應 */
 .spoken-response {
     position: absolute;
-    top:12.5%;
+    top:12%;
     left: 31%;
-    width: 54%;
+    width: 57%;
     height: 8%;
-    font-size: 100%;
+    font-size: 80%;
     color: #000;
 }
