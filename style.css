@@ -13,7 +13,7 @@ html,body{
 }
 
 body {
-    background: #91D0BD url(002.png) no-repeat center;
+    background: #91D0BD url(001.png) no-repeat center;
     background-size:contain;
 }
 
@@ -144,9 +144,9 @@ button.fab{
 #mymap {
     position: absolute;
     left: 5%;
-    top: 28%;
+    top: 25%;
 	width:90%;
-	height:43%;
+	height:50%;
     display:none;
     margin: auto;
 	color:#000;

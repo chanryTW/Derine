@@ -18,8 +18,8 @@ document.ontouchmove = function(event){
 }
 
 // FAB 的初始位置 (中間50,50;右下角90,85)
- var btnSendWidth =  423*(getheight/667);
- //var btnSendWidth =  375*(getheight/667);
+//  var btnSendWidth =  423*(getheight/667);
+ var btnSendWidth =  375*(getheight/667);
  
 
 $('.wrapp').css({
