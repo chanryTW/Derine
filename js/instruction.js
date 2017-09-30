@@ -412,7 +412,7 @@ function Start00011(SearchKey) {
 		//由pos.coords取出latitude及longitude
 		var curLatLng = new google.maps.LatLng(
       22.431904, 120.515577);
-      open("https://www.google.com.tw/maps/dir/"+pos.coords.latitude+","+pos.coords.longitude+"/"+SearchKey,'_self');
+      open("https://www.google.com.tw/maps/dir/"+22.431904+","+120.515577+"/"+SearchKey,'_self');
   }
 }
 
