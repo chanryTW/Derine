@@ -167,10 +167,48 @@ button.fab{
 /* Derine回應 */
 .spoken-response {
     position: absolute;
-    top:12%;
+    top:12.5%;
     left: 31%;
-    width: 57%;
+    width: 54%;
     height: 8%;
-    font-size: 80%;
+    font-size: 100%;
     color: #000;
+}
+
+/* 對話框 */
+.mwt_border{
+	width:32%;
+	height:3%;
+	text-align:left;
+	background:#fff;
+    position:absolute;
+    left: 25%;
+    top: 9%;
+	border: solid 1px #B9B9B9;
+	margin:10px;
+    padding:10px; 
+    border-radius: 10px;
+    color: #000;
+}
+/*箭頭左*/
+.mwt_border .arrow_l_int{
+	width:0px;
+	height:0px;
+	border-width:15px;
+	border-style:solid;
+	border-color:transparent #B9B9B9 transparent  transparent ;
+	position:absolute;
+	top:15%;
+	left:-22px;
+}
+/*箭頭左-邊框*/
+.mwt_border .arrow_l_out{
+	width:0px;
+	height:0px;
+	border-width:15px;
+	border-style:solid;
+	border-color:transparent #fff transparent transparent ;
+	position:absolute;
+	top:15%;
+    left:-22px;
 }

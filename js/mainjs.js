@@ -210,20 +210,14 @@ var count = 0;
           window.speechSynthesis.speak(msg);
           Start00002("廟宇");
           count = count +1;
-          break;
         }else{
           val = "推薦您以下景點，一 林邊光采濕地、距離43公里，二 海神宮風景區、距離59公里，三 大鵬灣國家風景區、距離45公里";
           msg.text = val;
           window.speechSynthesis.speak(msg);
           Start00002("公園");
-          count = count +1;          
-          break;
+          count = count +1; 
         }
-      
-        
-      case "99902": //模擬 屏東有什麼好玩的 假設人在夢時代
-        
-
+        break;
 			default:
 			  msg.text = val;
 			  window.speechSynthesis.speak(msg);
@@ -231,5 +225,41 @@ var count = 0;
 
       }
 
+      if (val.length <= 3){
+        $('.mwt_border').css({
+          "width": "13%",          
+          "height": "3%"
+        });
+      }else if (val.length <= 6){
+        $('.mwt_border').css({
+          "width": "25%",          
+          "height": "3%"
+        });
+      }else if (val.length <= 10){
+        $('.mwt_border').css({
+          "width": "40%",          
+          "height": "3%"
+        });
+      }else if (val.length <= 14){
+        $('.mwt_border').css({
+          "width": "56%",          
+          "height": "3%"
+        });
+      }else if (val.length <= 28){
+        $('.mwt_border').css({
+          "width": "56%",          
+          "height": "6%"
+        });
+      }else if (val.length <= 42) {
+        $('.mwt_border').css({
+          "width": "56%",  
+          "height": "9%"
+        });
+      }else{
+        $('.mwt_border').css({
+          "width": "56%",          
+          "height": "11%"
+        });
+      }
       $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);//放入回應
     }
