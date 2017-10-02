@@ -7,9 +7,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js"></script> <!-- 懸浮功能 -->
 	<script src="js/jquery-3.2.1.min.js"></script> <!-- 語音和AJAX用 -->
     <title>Icaht測試</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    
 <div class="wrapp">
     <!-- 文字輸入 -->
 	<input id="speech" class="spoken-speech" type="text" placeholder="文字輸入 or 按鈕發話...">
@@ -17,13 +18,11 @@
     <button class="fab" href="#"></button>
     <!-- 送出按鈕 -->
     <button id="btnSend" class="btnSend">送出</button>
-
+    <!-- Derine回應文字 -->
     <div id="spokenResponse" class="mwt_border spoken-response">
-        <span class="arrow_l_int"></span>
         <span class="arrow_l_out"></span>
         <div class="spoken-response__text">哈囉，我是Derine!</div>
-    </div>
-
+    </div>    
 <!-- 地圖功能 -->
     <div id="mymap"></div>
     <div id="place-details"></div>

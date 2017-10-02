@@ -258,7 +258,7 @@ var count = 0;
       }else{
         $('.mwt_border').css({
           "width": "56%",          
-          "height": "11%"
+          "height": "11.5%"
         });
       }
       $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);//放入回應

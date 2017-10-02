@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.phonegap.example"
+        version   = "1.0">
+
+    <name>Derine</name>
+    <description>
+        個人化旅遊智慧推薦助理。
+    </description>
+    <author href="" email="chanrytw@gmail.com">
+        CHUAN RUI,LIAO
+    </author>
+    <preference name="permissions" value="none"/>    
+
+    <plugin spec="https://github.com/apache/cordova-plugin-file.git#4.1.0" source="git" />
+    <plugin spec="https://github.com/macdonst/SpeechRecognitionPlugin" source="git" />
+    <plugin spec="https://github.com/macdonst/SpeechSynthesisPlugin" source="git" />
+
+    <plugin spec="https://github.com/Menusito/phonegap-googlemaps-plugin" source="git" />    
+</widget>

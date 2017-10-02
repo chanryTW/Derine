@@ -36,7 +36,8 @@ function Start00001() {
 function Start00002(SearchKey) {
 
   navigator.geolocation.getCurrentPosition(function(position) {
-    var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
+    var currentLocation = {lat: 22.431820, lng: 120.516062};
+    // var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
     
     var map = new google.maps.Map(document.getElementById('mymap'), {
       center: currentLocation,
@@ -59,7 +60,7 @@ function Start00002(SearchKey) {
 
     function searchResults(results, status) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        var aims = results.slice(0, 5);
+        var aims = results.slice(0, 4);
         for (var i = 0; i < results.length; i++) {
           aims.forEach(createMarker);
         } 
@@ -411,23 +412,22 @@ function Start00011(SearchKey) {
 	}
 	function parsePosition(pos) {
 		//由pos.coords取出latitude及longitude
-		var curLatLng = new google.maps.LatLng(
-      pos.coords.latitude, pos.coords.longitude);
-      open("https://www.google.com.tw/maps/dir/"+pos.coords.latitude+","+pos.coords.longitude+"/"+SearchKey,'_self');
+		var curLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+    open("https://www.google.com.tw/maps/dir/"+curLatLng+"/"+SearchKey,'_self');
   }
 }
 
 // Map icon
 
 var icon1 = {
-			url: "MarkerPictures/red-circle.png",
+			url: "img/MarkerPictures/red-circle.png",
 			scaledSize: new google.maps.Size(40, 40),
 			origin: new google.maps.Point(0,0),
 			anchor: new google.maps.Point(0, 0)
 };
 
 var icon2 = {
-			url: "MarkerPictures/blu-circle.png",
+			url: "img/MarkerPictures/blu-circle.png",
 			scaledSize: new google.maps.Size(50, 50),
 			origin: new google.maps.Point(0,0),
 			anchor: new google.maps.Point(0, 0)

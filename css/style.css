@@ -13,7 +13,7 @@ html,body{
 }
 
 body {
-    background: #91D0BD url(001.png) no-repeat center;
+    background: #91D0BD url(../img/001.png) no-repeat center;
     background-size:contain;
 }
 
@@ -171,13 +171,13 @@ button.fab{
     left: 31%;
     width: 54%;
     height: 8%;
-    font-size: 100%;
+    font-size: 95%;
     color: #000;
 }
 
 /* 對話框 */
 .mwt_border{
-	width:32%;
+	width:35%;
 	height:3%;
 	text-align:left;
 	background:#fff;
@@ -186,20 +186,9 @@ button.fab{
     top: 9%;
 	border: solid 1px #B9B9B9;
 	margin:10px;
-    padding:10px; 
+    padding:7px 7px 7px 7px;
     border-radius: 10px;
     color: #000;
-}
-/*箭頭左*/
-.mwt_border .arrow_l_int{
-	width:0px;
-	height:0px;
-	border-width:15px;
-	border-style:solid;
-	border-color:transparent #B9B9B9 transparent  transparent ;
-	position:absolute;
-	top:15%;
-	left:-22px;
 }
 /*箭頭左-邊框*/
 .mwt_border .arrow_l_out{
@@ -209,6 +198,6 @@ button.fab{
 	border-style:solid;
 	border-color:transparent #fff transparent transparent ;
 	position:absolute;
-	top:15%;
+	top:5%;
     left:-22px;
 }
