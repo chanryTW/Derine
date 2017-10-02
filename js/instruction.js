@@ -10,7 +10,8 @@ function Start00001() {
 	function parsePosition(pos) {
 		//由pos.coords取出latitude及longitude
 		var curLatLng = new google.maps.LatLng(
-			pos.coords.latitude, pos.coords.longitude);
+			// pos.coords.latitude, pos.coords.longitude);
+			22.431820, 120.516062);
 		
 		//創建新地圖
 		var gc = new google.maps.Geocoder();
@@ -412,8 +413,9 @@ function Start00011(SearchKey) {
 	}
 	function parsePosition(pos) {
 		//由pos.coords取出latitude及longitude
-		var curLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-    open("https://www.google.com.tw/maps/dir/"+curLatLng+"/"+SearchKey,'_self');
+		var curLatLng = new google.maps.LatLng(22.431820, 120.516062);
+		// var curLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+    open("https://www.google.com.tw/maps/dir/"+curLatLng+"/林邊 加油站",'_self');
   }
 }
 

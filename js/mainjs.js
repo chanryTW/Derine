@@ -235,22 +235,22 @@ var count = 0;
           "width": "25%",          
           "height": "3%"
         });
-      }else if (val.length <= 10){
+      }else if (val.length < 10){
         $('.mwt_border').css({
           "width": "40%",          
           "height": "3%"
         });
-      }else if (val.length <= 14){
+      }else if (val.length < 14){
         $('.mwt_border').css({
           "width": "56%",          
           "height": "3%"
         });
-      }else if (val.length <= 28){
+      }else if (val.length < 28){
         $('.mwt_border').css({
           "width": "56%",          
           "height": "6%"
         });
-      }else if (val.length <= 42) {
+      }else if (val.length < 42) {
         $('.mwt_border').css({
           "width": "56%",  
           "height": "9%"
