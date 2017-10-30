@@ -125,7 +125,7 @@ function ($scope, $stateParams) {
 
     });
 
-    //手動Enter方式
+    //手動Enter方式 !!!!!!!!!!!!!!!!!!!!!!!!!
     $("#speech").keypress(function(e){
       code = (e.keyCode ? e.keyCode : e.which);
       if (code == 13)
@@ -170,6 +170,8 @@ function ($scope, $stateParams) {
         recognition.stop();
         recognition = null;
       }
+      // 隱藏辨識動畫  
+      $(".loaderBox").hide();
     }
 
     function switchRecognition() { //判斷開關語音辨識
@@ -341,17 +343,65 @@ function ($scope, $stateParams) {
       $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);//放入回應
     }
   
-    // 語音按鈕事件
-    document.getElementById("fab").addEventListener("click",function(){
+    // 語音按鈕事件 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    $('#fab').click(function(e){
         // 開啟辨識
         switchRecognition();
         // 隱藏影片
-        $("#muteYouTubeVideoPlayer").hide();        
-    },false);
+        $("#muteYouTubeVideoPlayer").hide();
+        // 隱藏地圖
+        $("#mymap").hide();
+        // 辨識動畫
+        FabAnimated();
+        $(".loaderBox").show();
+    });
 
+    // 辨識動畫
+    var loaderCount=0;
+    function FabAnimated() {
+        $.fn.loader = function (options) {
+            // default options
+            var opts = $.extend({
+                color: '#ffffff',
+                shadowColor: '#ffffff',
+                pieceCount: 27,
+                syncPiecesAndIterations: true
+              }, options);
+            
+            return this.filter('div.loader').each(function () {
+              var $el = $(this);
+              for (var x = 0; x < opts.pieceCount; x++) {
+                (function (iteration) {
+                  // calculate the animation delay
+                  var delay = (iteration * 0.86);
+                  delay = opts.syncPiecesAndIterations ? delay / opts.pieceCount : -delay;
+                  delay += 's';
+                  
+                  var color = opts.color;
+                  var shadowColor = opts.shadowColor;
+                  
+                  // build and append a piece of the loading indicator
+                  $el.append(
+                    $('<i>')
+                      .text(' ')
+                      .css('background-color', color)
+                      .css('animation-delay', delay)
+                      .css('box-shadow', '0 0 10px ' + shadowColor)
+                  );
+                })(x);
+              }
+            });
+        }
+        if (loaderCount==0){
+            $('.loader').loader();
+            loaderCount=loaderCount+1;
+        }
+    }
+        
     // --------------------------------------------------------------------------------------------------------------
     // ***************** Start00001 定位 *****************
     function Start00001() { 
+        $("#mymap").show();
         getGeolocation(); //取得使用者目前位罝
         function getGeolocation() {
             if (navigator && navigator.geolocation) {
@@ -386,6 +436,7 @@ function ($scope, $stateParams) {
 
     // ***************** Start00002 問地點 *****************
     function Start00002(SearchKey) {
+        $("#mymap").show();        
         navigator.geolocation.getCurrentPosition(function(position) {
             var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
             
