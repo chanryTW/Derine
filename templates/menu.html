@@ -1,0 +1,32 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="side-menu21"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" id="side-menu21">
+    <ion-content padding="false" style="top:0px !important;background: url(img/002.jpg) no-repeat center;background-size:cover;" class="side-menu-left ">
+      <div class="spacer" style="height: 30px;"></div>
+      <!-- 這裡要加一個圓框的CSS -->
+      <div class="menu-img-div">
+        <img id="menu-img" src="img/member.png">
+      </div>
+      <div class="spacer" style="height: 10px;"></div>
+      <h4 id="menu-heading1" style="color:#FFFFFF;text-align:center;">{使用者暱稱}</h4>
+      <div class="spacer" style="height: 20px;"></div>
+      <ion-list id="menu-list1">
+        <ion-item id="menu-list-item1" ui-sref="menu.derine()" menu-close="">首頁</ion-item>
+        <ion-item id="menu-list-item6" ui-sref="menu.page7()" menu-close="">個人資料</ion-item>
+        <ion-item id="menu-list-item3" ui-sref="menu.page8()" menu-close="">功能說明</ion-item>
+        <ion-item id="menu-list-item4" ui-sref="menu.page9()" menu-close="">關於我們</ion-item>
+        <ion-item id="menu-list-item5" ui-sref="page4()" menu-close="">登出</ion-item>
+      </ion-list>
+      <div class="spacer" style="height: 10px;"></div>
+      <h5 id="menu-heading2" style="color:#FFFFFF;font-weight:400;text-align:center;">Copyright © 2017</h5>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
