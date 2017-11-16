@@ -108,8 +108,10 @@ function ($scope, $stateParams) {
     // --------------------------------------------------------------------------------------------------------------    
 
     var count = 0;
-    
-    var accessToken = "8f330cbcfadd4ebbbcff549d6ebb7fe9",
+    // 臨時
+    var accessToken = "ad8d1f715e7c410e86e644e953239b2e",
+    // 原版
+    // var accessToken = "8f330cbcfadd4ebbbcff549d6ebb7fe9",
       baseUrl = "https://api.api.ai/v1/",
       $speechInput,
       recognition,
