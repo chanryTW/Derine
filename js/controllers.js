@@ -109,9 +109,9 @@ function ($scope, $stateParams) {
 
     var count = 0;
     // 臨時
-    var accessToken = "ad8d1f715e7c410e86e644e953239b2e",
+    // var accessToken = "ad8d1f715e7c410e86e644e953239b2e",
     // 原版
-    // var accessToken = "8f330cbcfadd4ebbbcff549d6ebb7fe9",
+    var accessToken = "8f330cbcfadd4ebbbcff549d6ebb7fe9",
       baseUrl = "https://api.api.ai/v1/",
       $speechInput,
       recognition,
@@ -345,10 +345,26 @@ function ($scope, $stateParams) {
                 Start00014(SearchKey);
                 break;
             case "00015": //推薦系統
-                var SearchKey = val.substr(5);
-                val = Start00015(SearchKey);
-                msg.text = val;
-                window.speechSynthesis.speak(msg);
+                // var SearchKey = val.substr(5);
+                // val = Start00015(SearchKey);
+                // msg.text = val;
+                // window.speechSynthesis.speak(msg);
+                // break;
+                if (count % 2 == 0){
+                    val = "依照"+username+"的偏好，推薦您以下景點：一、福記古宅、二、慈濟宮、三、神農宮、四、慈真宮、五、安瀾宮";
+                    // val = "推薦"+username+"以下景點，一 福記古宅、距離550公尺，二 慈濟宮、距離290公尺，三 東隆宮、距離10公里";
+                    msg.text = val;
+                    window.speechSynthesis.speak(msg);
+                    Start00002("廟");
+                    count = count +1;
+                }else{
+                    val = "依照"+username+"的偏好，推薦您以下景點：一、林邊光采濕地、二、海神宮風景區、三 大鵬灣國家風景區、距離45公里";
+                    // val = "推薦"+username+"以下景點，一 林邊光采濕地、距離43公里，二 海神宮風景區、距離59公里，三 大鵬灣國家風景區、距離45公里";
+                    msg.text = val;
+                    window.speechSynthesis.speak(msg);
+                    Start00002("公園");
+                    count = count +1; 
+                }
                 break;
             case "00016": //問自己是誰
                 val = "當然"+username+"，我可是你的貼身助理呢";
@@ -439,7 +455,7 @@ function ($scope, $stateParams) {
         function parsePosition(pos) {
             //由pos.coords取出latitude及longitude
             var curLatLng = new google.maps.LatLng(
-                // 22.639691, 120.302157);
+                // 22.431242, 120.515368);
                 pos.coords.latitude, pos.coords.longitude);
             
             //創建新地圖
@@ -466,7 +482,8 @@ function ($scope, $stateParams) {
     function Start00002(SearchKey) {
         $("#mymap").show();        
         navigator.geolocation.getCurrentPosition(function(position) {
-            var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
+            // var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
+            var currentLocation = {lat: 22.431242, lng: 120.515368};
             
             var map = new google.maps.Map(document.getElementById('mymap'), {
             center: currentLocation,
@@ -491,7 +508,7 @@ function ($scope, $stateParams) {
 
             function searchResults(results, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-                var aims = results.slice(0, 10);
+                var aims = results.slice(0, 5);
                 for (var i = 0; i < results.length; i++) {
                 aims.forEach(createMarker);
                 } 
