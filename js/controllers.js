@@ -351,7 +351,7 @@ function ($scope, $stateParams) {
                 // window.speechSynthesis.speak(msg);
                 // break;
                 if (count % 2 == 0){
-                    val = "依照"+username+"的偏好，推薦您以下景點：一、福記古宅、二、慈濟宮、三、神農宮、四、慈真宮、五、安瀾宮";
+                    val = "依照"+username+"的偏好，推薦您以下景點：一、福記古宅、二、慈濟宮、三、神農宮、四、慈真宮、五、安瀾宮";
                     // val = "推薦"+username+"以下景點，一 福記古宅、距離550公尺，二 慈濟宮、距離290公尺，三 東隆宮、距離10公里";
                     msg.text = val;
                     window.speechSynthesis.speak(msg);
