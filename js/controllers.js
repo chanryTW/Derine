@@ -358,11 +358,11 @@ function ($scope, $stateParams) {
                     Start00002("廟");
                     count = count +1;
                 }else{
-                    val = "依照"+username+"的偏好，推薦您以下景點：一、林邊光采濕地、二、海神宮風景區、三 大鵬灣國家風景區、距離45公里";
+                    val = "依照"+username+"的偏好，推薦您以下景點：一、林邊光采濕地、二、光林村篩斗店、三、仁和村苦伕寮、四、林邊公園";
                     // val = "推薦"+username+"以下景點，一 林邊光采濕地、距離43公里，二 海神宮風景區、距離59公里，三 大鵬灣國家風景區、距離45公里";
                     msg.text = val;
                     window.speechSynthesis.speak(msg);
-                    Start00002("公園");
+                    Start00002("光");
                     count = count +1; 
                 }
                 break;
@@ -858,7 +858,8 @@ function ($scope, $stateParams) {
             }
             function parsePosition(pos) {
                 //由pos.coords取出latitude及longitude
-                var curLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+                // var curLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+                var curLatLng = new google.maps.LatLng(22.431242, 120.515368);
             open("https://www.google.com.tw/maps/dir/"+curLatLng+"/"+SearchKey,'_self');
         }
     }
