@@ -345,30 +345,32 @@ function ($scope, $stateParams) {
                 Start00014(SearchKey);
                 break;
             case "00015": //推薦系統
-                // var SearchKey = val.substr(5);
-                // val = Start00015(SearchKey);
-                // msg.text = val;
-                // window.speechSynthesis.speak(msg);
-                // break;
-                if (count % 2 == 0){
-                    val = "依照"+username+"的偏好，推薦您以下景點：一、林邊光采濕地、二、光林村篩斗店、三、仁和村苦伕寮、四、林邊公園";
+                var SearchKey = val.substr(5);
+                val = Start00015(SearchKey);
+                msg.text = val;
+                window.speechSynthesis.speak(msg);
+                break;
+
+                // --超級假資料--
+                // if (count % 2 == 0){
+                //     val = "依照"+username+"的偏好，推薦您以下景點：一、林邊光采濕地、二、光林村篩斗店、三、仁和村苦伕寮、四、林邊公園";
                     
-                    // val = "依照"+username+"的偏好，推薦您以下景點：一、福記古宅、二、慈濟宮、三、神農宮、四、慈真宮、五、安瀾宮";
-                    // val = "推薦"+username+"以下景點，一 福記古宅、距離550公尺，二 慈濟宮、距離290公尺，三 東隆宮、距離10公里";
-                    msg.text = val;
-                    window.speechSynthesis.speak(msg);
-                    Start00002("廟");
-                    count = count +1;
-                }else{
-                    val = "依照"+username+"的偏好，推薦您以下景點：一、福記古宅、二、慈濟宮、三、神農宮、四、慈真宮、五、安瀾宮";
+                //     // val = "依照"+username+"的偏好，推薦您以下景點：一、福記古宅、二、慈濟宮、三、神農宮、四、慈真宮、五、安瀾宮";
+                //     // val = "推薦"+username+"以下景點，一 福記古宅、距離550公尺，二 慈濟宮、距離290公尺，三 東隆宮、距離10公里";
+                //     msg.text = val;
+                //     window.speechSynthesis.speak(msg);
+                //     Start00002("廟");
+                //     count = count +1;
+                // }else{
+                //     val = "依照"+username+"的偏好，推薦您以下景點：一、福記古宅、二、慈濟宮、三、神農宮、四、慈真宮、五、安瀾宮";
                     
-                    // val = "依照"+username+"的偏好，推薦您以下景點：一、林邊光采濕地、二、光林村篩斗店、三、仁和村苦伕寮、四、林邊公園";
-                    // val = "推薦"+username+"以下景點，一 林邊光采濕地、距離43公里，二 海神宮風景區、距離59公里，三 大鵬灣國家風景區、距離45公里";
-                    msg.text = val;
-                    window.speechSynthesis.speak(msg);
-                    Start00002("光");
-                    count = count +1; 
-                }
+                //     // val = "依照"+username+"的偏好，推薦您以下景點：一、林邊光采濕地、二、光林村篩斗店、三、仁和村苦伕寮、四、林邊公園";
+                //     // val = "推薦"+username+"以下景點，一 林邊光采濕地、距離43公里，二 海神宮風景區、距離59公里，三 大鵬灣國家風景區、距離45公里";
+                //     msg.text = val;
+                //     window.speechSynthesis.speak(msg);
+                //     Start00002("光");
+                //     count = count +1; 
+                // }
                 break;
             case "00016": //問自己是誰
                 val = "當然"+username+"，我可是你的貼身助理呢";
@@ -932,8 +934,8 @@ function ($scope, $stateParams) {
     function Start00015(SearchKey) {
         var resp1="";
         $.ajax({
-            // url: "http://192.168.43.170:5000/data/",
-            url: "http://120.119.164.95:7516/data/",
+            url: "http://192.168.43.170:5000/data/",
+            // url: "http://120.119.164.95:7516/data/",
             async: false,
             type: "POST",
             data: {
@@ -1021,45 +1023,78 @@ function ($scope, $stateParams) {
         // 回傳語句
         return "依照"+localStorage.getItem("username")+"的偏好，推薦您以下"+resp1;
         
+
+        // ---這段是從FB去撈經緯度資料---
         // 從Firebase擷取資料
         // var db = firebase.database();
         // db.ref("景點資料/").on("value", function(snap) {
         //     var data = snap.val();
         //     console.log(data);
-            // $("#mymap").show(); 
-            // navigator.geolocation.getCurrentPosition(function(position) {
-            //     var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
-            //     var map = new google.maps.Map(document.getElementById('mymap'), {
-            //     zoom: 8,
-            //     center: currentLocation
-            //     });
+        //     $("#mymap").show(); 
+        //     navigator.geolocation.getCurrentPosition(function(position) {
+        //         var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
+        //         var map = new google.maps.Map(document.getElementById('mymap'), {
+        //         zoom: 8,
+        //         center: currentLocation
+        //         });
             
-            //     var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        //         var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
             
-            //     var locations = [
-            //     {lat: data.經度, lng: data.緯度},
-            //     {lat: -33.718234, lng: 150.363181},
-            //     {lat: -33.727111, lng: 150.371124},
-            //     {lat: -33.848588, lng: 151.209834},
-            //     {lat: -33.851702, lng: 151.216968}
-            //     ]
+        //         var locations = [
+        //         {lat: data.經度, lng: data.緯度},
+        //         {lat: -33.718234, lng: 150.363181},
+        //         {lat: -33.727111, lng: 150.371124},
+        //         {lat: -33.848588, lng: 151.209834},
+        //         {lat: -33.851702, lng: 151.216968}
+        //         ]
                 
-            //     var markers = locations.map(function(location, i) {
-            //     return new google.maps.Marker({
-            //         position: location,
-            //         label: labels[i % labels.length]
-            //     });
-            //     });
+        //         var markers = locations.map(function(location, i) {
+        //         return new google.maps.Marker({
+        //             position: location,
+        //             label: labels[i % labels.length]
+        //         });
+        //         });
             
-            //     var markerCluster = new MarkerClusterer(map, markers,
-            //         {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+        //         var markerCluster = new MarkerClusterer(map, markers,
+        //             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
             
-            // }); 
+        //     }); 
         // }, function(err) {
         //     alert('取得資料失敗！');
         // }); 
 
+        // ---這段是假資料---
+        $("#mymap").show(); 
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
+            var map = new google.maps.Map(document.getElementById('mymap'), {
+            zoom: 13,
+            center:  {lat: -33.718234, lng: 150.363181}
+            });
         
+            var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        
+            
+            
+            var markers = locations.map(function(location, i) {
+            return new google.maps.Marker({
+                position: location,
+                label: labels[i % labels.length]
+            });
+            });
+        
+            var markerCluster = new MarkerClusterer(map, markers,
+                {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+        
+        }); 
+        var locations = [
+            {lat: -33.718234, lng: 150.363181},
+            {lat: -33.727111, lng: 150.371124},
+            {lat: -33.848588, lng: 151.209834},
+            {lat: -33.851702, lng: 151.216968}
+            ]
+        // 回傳語句
+        return "依照"+localStorage.getItem("username")+"的偏好，推薦您以下景點";
         
     }
 
