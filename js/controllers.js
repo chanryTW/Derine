@@ -864,8 +864,8 @@ function ($scope, $stateParams) {
             }
             function parsePosition(pos) {
                 //由pos.coords取出latitude及longitude
-                // var curLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-                var curLatLng = new google.maps.LatLng(22.431242, 120.515368);
+                var curLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+                // var curLatLng = new google.maps.LatLng(22.431242, 120.515368);
             open("https://www.google.com.tw/maps/dir/"+curLatLng+"/"+SearchKey,'_self');
         }
     }
