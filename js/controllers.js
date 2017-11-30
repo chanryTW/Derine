@@ -934,8 +934,8 @@ function ($scope, $stateParams) {
     function Start00015(SearchKey) {
         var resp1="";
         $.ajax({
-            url: "http://192.168.43.170:5000/data/",
-            // url: "http://120.119.164.95:7516/data/",
+            // url: "http://192.168.43.170:5000/data/",
+            url: "http://120.119.164.95:7516/data/",
             async: false,
             type: "POST",
             data: {
@@ -1064,37 +1064,37 @@ function ($scope, $stateParams) {
         // }); 
 
         // ---這段是假資料---
-        $("#mymap").show(); 
-        navigator.geolocation.getCurrentPosition(function(position) {
-            var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
-            var map = new google.maps.Map(document.getElementById('mymap'), {
-            zoom: 13,
-            center:  {lat: -33.718234, lng: 150.363181}
-            });
+        // $("#mymap").show(); 
+        // navigator.geolocation.getCurrentPosition(function(position) {
+        //     var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
+        //     var map = new google.maps.Map(document.getElementById('mymap'), {
+        //     zoom: 13,
+        //     center:  {lat: -33.718234, lng: 150.363181}
+        //     });
         
-            var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        //     var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         
             
             
-            var markers = locations.map(function(location, i) {
-            return new google.maps.Marker({
-                position: location,
-                label: labels[i % labels.length]
-            });
-            });
+        //     var markers = locations.map(function(location, i) {
+        //     return new google.maps.Marker({
+        //         position: location,
+        //         label: labels[i % labels.length]
+        //     });
+        //     });
         
-            var markerCluster = new MarkerClusterer(map, markers,
-                {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+        //     var markerCluster = new MarkerClusterer(map, markers,
+        //         {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
         
-        }); 
-        var locations = [
-            {lat: -33.718234, lng: 150.363181},
-            {lat: -33.727111, lng: 150.371124},
-            {lat: -33.848588, lng: 151.209834},
-            {lat: -33.851702, lng: 151.216968}
-            ]
-        // 回傳語句
-        return "依照"+localStorage.getItem("username")+"的偏好，推薦您以下景點";
+        // }); 
+        // var locations = [
+        //     {lat: -33.718234, lng: 150.363181},
+        //     {lat: -33.727111, lng: 150.371124},
+        //     {lat: -33.848588, lng: 151.209834},
+        //     {lat: -33.851702, lng: 151.216968}
+        //     ]
+        // // 回傳語句
+        // return "依照"+localStorage.getItem("username")+"的偏好，推薦您以下景點";
         
     }
 
