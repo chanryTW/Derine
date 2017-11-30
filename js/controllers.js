@@ -1023,7 +1023,7 @@ function ($scope, $stateParams) {
                     center:  {lat: 22.725829, lng: 120.313716}
                     });
                 
-                    var labels = 'D123456789';
+                    var labels = '123456789';
                 
                     
                     
