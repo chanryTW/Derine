@@ -1,0 +1,243 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+html,body{
+    font-family: 微軟正黑體, Arial, sans-serif;
+}
+/* -----------------------------------------------歡迎頁面----------------------------------------------- */
+/* 進入按鈕 */
+#page5-button4{
+    top: 80%;
+    left: 25%;
+    width: 50%;
+    background-color: #0568BA;
+    border-radius: 15px;
+    -moz-box-shadow:6px 6px 12px -2px rgba(20%,20%,40%,0.5);
+    -webkit-box-shadow:6px 6px 12px -2px rgba(20%,20%,40%,0.5);
+    box-shadow:6px 6px 12px -2px rgba(20%,20%,40%,0.5);
+    color:rgb(255, 255, 255);
+    font-size: 32px;
+}
+
+/* -----------------------------------------------登入頁面----------------------------------------------- */
+#page4-label1,#page4-label2{
+    background-color: rgba(0, 0, 0, 0);
+    border-top:0px;
+    border-left:0px;
+    border-right:0px;
+}
+#page4-span1,#page4-span2,#page4-input1,#page4-input2{
+    color: #fff;
+    font-size: 14px;
+    padding-bottom: 0px;
+}
+#page4-button1{
+    color:rgb(7, 131, 108);
+    border-radius:15px;
+}
+#page4-button3{
+    background-color: rgba(255, 255, 255, 0.4);
+    color:rgb(255, 255, 255);
+    border-radius:15px;
+}
+#page4-button2{
+    font-size:12px;
+    color:white;
+    margin-top:-15px;
+}
+/* -----------------------------------------------主頁面----------------------------------------------- */
+/* Derine本人 */
+.derine{
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    height: 18%;
+    padding:10px;
+}
+/* Derine回應文字 */
+.spoken-response__text {
+    font-size: 17px;
+}
+/* 對話泡泡框 */
+.mwt_border{
+	text-align:left;
+	background:#fff;
+    position:absolute;
+    left: 25%;
+    top: 1%;
+	border: solid 1px #B9B9B9;
+	margin:10px;
+    padding:7px 7px 7px 7px;
+    border-radius: 10px;
+    color: #000;
+}
+/*箭頭左-邊框*/
+.mwt_border .arrow_l_out{
+	width:0px;
+	height:0px;
+	border-width:15px;
+	border-style:solid;
+	border-color:transparent #fff transparent transparent ;
+	position:absolute;
+	top:5%;
+    left:-22px;
+}
+/* 地圖 */
+#mymap {
+    position: absolute;
+    left: 5%;
+    top: 20%;
+	width:90%;
+	height:50%;
+    display:none;
+    margin: auto;
+	color:#000;
+}
+/* 評分按鈕 */
+.btn01{
+    border: solid 1px #999999;
+    margin: 10px;
+    font-size:25px;
+}
+/* 影片 */
+#muteYouTubeVideoPlayer{
+    position: absolute;
+    top: 19%;
+    width: 100%;
+    height: 330px;
+    padding: 10px;
+}
+/* 語音按鈕 */
+#fab{
+    position: absolute;  
+    background: url(../img/mic.svg) no-repeat center;
+    top: 72%;
+    left: 36%;
+    width: 30%;
+    height: 18%;
+    border: none;
+    border-radius: 50%;
+}
+/* 飄動動畫 */
+.animated {
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+  }
+.animated.infinite {
+    animation-iteration-count: infinite;
+}
+@keyframes pulse {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+.pulse {
+    animation-name: pulse;
+}
+/* 語音動畫 */
+.loaderBox {
+    position: absolute;
+    text-align: center;
+    margin: 10px;
+    top: 35%;
+    height: 20%;
+    width: 95%;
+    display:none;
+    color: #ffffff;
+}
+.loaderText {
+    display: inline-block;
+    font-size: 40px;
+}
+.loader {
+    display: inline-block;
+    transform: translate(0, -100%);
+}
+.loader > i {
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    display: inline-block;
+    border-radius: 150px;
+    margin: 2px;
+    animation: loaderAnim 1s infinite ease-in-out;
+    transform: translate(0, 50%);
+}
+@keyframes loaderAnim {
+    50% {
+        height: 40px;
+    }
+}
+/* 文字輸入框 */
+#derine_text{
+    position: relative;
+    top: 88%;
+}
+#speech{
+    width: 100%;
+}
+/* -----------------------------------------------選單頁面----------------------------------------------- */
+/* 大頭照 */
+.menu-img-div{
+    display: block;
+    text-align: center;
+    width: 140px;
+    height:140px;
+    border-radius: 50%;
+    border:4px solid #fff;
+    margin: 0 auto;
+    -moz-box-shadow:6px 6px 12px -2px rgba(20%,20%,40%,0.5);
+    -webkit-box-shadow:6px 6px 12px -2px rgba(20%,20%,40%,0.5);
+    box-shadow:6px 6px 12px -2px rgba(20%,20%,40%,0.5);
+    overflow: hidden; 
+}
+#menu-img{
+    display: block; 
+    background-size:cover;
+    background-position:center center;
+    height: 100%;
+}
+/* 列表按鈕 */
+#menu-list-item1 a,#menu-list-item3 a,#menu-list-item4 a,#menu-list-item5 a,#menu-list-item6 a{
+    background-color: rgba(255, 255, 255, 0.281);
+    font-size: 28px;
+    font-family: "微軟正黑體";
+    font-weight:bold;
+    text-align: center;
+    padding: 16px;
+    color: #ffffff;
+}
+#menu-list1,#menu-list1 .list,#menu-list-item1,#menu-list-item3,#menu-list-item4,#menu-list-item5,#menu-list-item6{
+    background-color: rgba(255, 255, 255, 0);
+}
+/*  */
+#menu-heading2{
+    position: relative;
+}
+/* -----------------------------------------------個人資料頁面----------------------------------------------- */
+/* 存檔按鈕 */
+#page7_savebtn1,#page7_savebtn2,#page7_savebtn3{
+    margin: 10px;
+    width: 94.5%;
+}
+/* -----------------------------------------------關於我們頁面----------------------------------------------- */
+/* 介紹影片 */
+#page8-video{
+    width: 100%;
+    height: 204px;
+    padding: 5px;
+}
+/* 成員大頭照 */
+.imgradius{
+    border-radius: 20%;
+    -moz-box-shadow:6px 6px 12px -2px rgba(20%,20%,40%,0.5);
+    -webkit-box-shadow:6px 6px 12px -2px rgba(20%,20%,40%,0.5);
+    box-shadow:6px 6px 12px -2px rgba(20%,20%,40%,0.5);
+}
