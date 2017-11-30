@@ -946,75 +946,105 @@ function ($scope, $stateParams) {
                 resp1 = resp.category+"，一，"+resp.Attraction1+"，二，"+resp.Attraction2+"，三，"+resp.Attraction3+"，四，"+resp.Attraction4+"，五，"+resp.Attraction5;
                 // 秀地圖
                 $("#mymap").show();        
+                // navigator.geolocation.getCurrentPosition(function(position) {
+                //     var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
+                    
+                //     var map = new google.maps.Map(document.getElementById('mymap'), {
+                //     center: currentLocation,
+                //     zoom: 13,
+                //     mapTypeControl: false
+                //     // ,disableDefaultUI:"disabled"
+                //     });
+
+                //     var service = new google.maps.places.PlacesService(map);
+                //     var query = {
+                //     location: currentLocation,
+                //     radius: '2000',
+                //     keyword: resp.category
+                //     }; 
+                    
+                //     service.radarSearch(query, searchResults); 
+                //     var currentPosition = new google.maps.Marker({
+                //     position: currentLocation,
+                //     map: map,
+                //     icon: icon1,
+                //     });
+
+                //     function searchResults(results, status) {
+                //     if (status === google.maps.places.PlacesServiceStatus.OK) {
+                //         var aims = results.slice(0, 5);
+                //         for (var i = 0; i < results.length; i++) {
+                //         aims.forEach(createMarker);
+                //         } 
+                //     } 
+                //     else if (status === "ZERO_RESULTS") {
+                //         alert('沒有');
+                //     } 
+                //     else {
+                //         alert('系統錯誤，請重新再試');
+                //     } 
+                //     }
+
+                //     var infoWINDOW;
+                    
+                //     function createMarker(place) {
+                //     var marker = new google.maps.Marker({
+                //         map: map,
+                //         icon: icon2,
+                //         position: place.geometry.location,
+                //     }); 
+
+                //     google.maps.event.addListener(marker, 'click', function() {
+                //         if (infoWINDOW) { infoWINDOW.close(); }
+                //         var infowindow = new google.maps.InfoWindow();
+                        
+                //         infoWINDOW = infowindow;
+                //         infowindow.open(map, this);
+
+                //         service.getDetails(place, function(details, status){
+                //         if (status === google.maps.places.PlacesServiceStatus.OK) {
+                //             infowindow.setContent('<div class="place-name"><font size="4">' + details.name + '</font></div>' + 
+                //             '<div class="place-info">地址：' + details.vicinity + '</div>' +
+                //             '<div class="place-info">電話：' + details.formatted_phone_number + '</div>' + 
+                //             '<div class="place-info">評價：' + details.rating + '</div><button class="btn01 button button-block button-energized">點我評分</button><br><img src="' + details.photos[0].getUrl({'maxWidth': 200}) +'"><br>');
+                //         } 
+                //         console.log(details.photos[0].getUrl({'maxWidth': 150, 'maxHeight': 150}));
+                //         }); 
+                        
+                        
+                //     }); 
+                //     } 
+                // }); 
                 navigator.geolocation.getCurrentPosition(function(position) {
                     var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
-                    
                     var map = new google.maps.Map(document.getElementById('mymap'), {
-                    center: currentLocation,
                     zoom: 13,
-                    mapTypeControl: false
-                    // ,disableDefaultUI:"disabled"
+                    center:  {lat: 22.725829, lng: 120.313716}
                     });
-
-                    var service = new google.maps.places.PlacesService(map);
-                    var query = {
-                    location: currentLocation,
-                    radius: '2000',
-                    keyword: resp.category
-                    }; 
+                
+                    var labels = 'D123456789';
+                
                     
-                    service.radarSearch(query, searchResults); 
-                    var currentPosition = new google.maps.Marker({
-                    position: currentLocation,
-                    map: map,
-                    icon: icon1,
+                    
+                    var markers = locations.map(function(location, i) {
+                    return new google.maps.Marker({
+                        position: location,
+                        label: labels[i % labels.length]
                     });
-
-                    function searchResults(results, status) {
-                    if (status === google.maps.places.PlacesServiceStatus.OK) {
-                        var aims = results.slice(0, 5);
-                        for (var i = 0; i < results.length; i++) {
-                        aims.forEach(createMarker);
-                        } 
-                    } 
-                    else if (status === "ZERO_RESULTS") {
-                        alert('沒有');
-                    } 
-                    else {
-                        alert('系統錯誤，請重新再試');
-                    } 
-                    }
-
-                    var infoWINDOW;
-                    
-                    function createMarker(place) {
-                    var marker = new google.maps.Marker({
-                        map: map,
-                        icon: icon2,
-                        position: place.geometry.location,
-                    }); 
-
-                    google.maps.event.addListener(marker, 'click', function() {
-                        if (infoWINDOW) { infoWINDOW.close(); }
-                        var infowindow = new google.maps.InfoWindow();
-                        
-                        infoWINDOW = infowindow;
-                        infowindow.open(map, this);
-
-                        service.getDetails(place, function(details, status){
-                        if (status === google.maps.places.PlacesServiceStatus.OK) {
-                            infowindow.setContent('<div class="place-name"><font size="4">' + details.name + '</font></div>' + 
-                            '<div class="place-info">地址：' + details.vicinity + '</div>' +
-                            '<div class="place-info">電話：' + details.formatted_phone_number + '</div>' + 
-                            '<div class="place-info">評價：' + details.rating + '</div><button class="btn01 button button-block button-energized">點我評分</button><br><img src="' + details.photos[0].getUrl({'maxWidth': 200}) +'"><br>');
-                        } 
-                        console.log(details.photos[0].getUrl({'maxWidth': 150, 'maxHeight': 150}));
-                        }); 
-                        
-                        
-                    }); 
-                    } 
+                    });
+                
+                    var markerCluster = new MarkerClusterer(map, markers,
+                        {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+                
                 }); 
+                console.log(resp);
+                var locations = [
+                    {lat: Number(resp.longitude1), lng: Number(resp.latitude1)},
+                    {lat: Number(resp.longitude2), lng: Number(resp.latitude2)},
+                    {lat: Number(resp.longitude3), lng: Number(resp.latitude3)},
+                    {lat: Number(resp.longitude4), lng: Number(resp.latitude4)},
+                    {lat: Number(resp.longitude5), lng: Number(resp.latitude5)}
+                    ]
             }
         });
 
@@ -1093,8 +1123,8 @@ function ($scope, $stateParams) {
         //     {lat: -33.848588, lng: 151.209834},
         //     {lat: -33.851702, lng: 151.216968}
         //     ]
-        // // 回傳語句
-        // return "依照"+localStorage.getItem("username")+"的偏好，推薦您以下景點";
+        // 回傳語句
+        return "依照"+localStorage.getItem("username")+"的偏好，推薦您以下景點";
         
     }
 
