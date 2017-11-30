@@ -462,7 +462,8 @@ function ($scope, $stateParams) {
             //由pos.coords取出latitude及longitude
             var curLatLng = new google.maps.LatLng(
                 // 22.431242, 120.515368);
-                pos.coords.latitude, pos.coords.longitude);
+                22.725829, 120.313716);
+                // pos.coords.latitude, pos.coords.longitude);
             
             //創建新地圖
             var gc = new google.maps.Geocoder();
@@ -489,7 +490,7 @@ function ($scope, $stateParams) {
         $("#mymap").show();        
         navigator.geolocation.getCurrentPosition(function(position) {
             // var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
-            var currentLocation = {lat: 22.431242, lng: 120.515368};
+            var currentLocation = {lat: 22.725829, lng: 120.313716};
             
             var map = new google.maps.Map(document.getElementById('mymap'), {
             center: currentLocation,
@@ -856,18 +857,18 @@ function ($scope, $stateParams) {
 
     // ***************** Start00011 導航 *****************
     function Start00011(SearchKey) {
-        getGeolocation(); //取得使用者目前位罝
-            function getGeolocation() {
-                if (navigator && navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(parsePosition);
-                }
-            }
-            function parsePosition(pos) {
+        // getGeolocation(); //取得使用者目前位罝
+        //     function getGeolocation() {
+        //         if (navigator && navigator.geolocation) {
+        //             navigator.geolocation.getCurrentPosition(parsePosition);
+        //         }
+        //     }
+        //     function parsePosition(pos) {
                 //由pos.coords取出latitude及longitude
-                var curLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-                // var curLatLng = new google.maps.LatLng(22.431242, 120.515368);
-            open("https://www.google.com.tw/maps/dir/"+curLatLng+"/"+SearchKey,'_self');
-        }
+                // var curLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+                // var curLatLng = new google.maps.LatLng(22.725829, 120.313716);
+            open("https://www.google.com.tw/maps/dir/高海科大/楠梓翠屏"+SearchKey,'_self');
+        // }
     }
 
     // ***************** Start00012 翻譯 *****************
