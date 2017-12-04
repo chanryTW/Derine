@@ -998,7 +998,7 @@ function ($scope, $stateParams) {
                     var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
                     var map = new google.maps.Map(document.getElementById('mymap'), {
                     zoom: 13,
-                    center:  {lat: 22.725829, lng: 120.313716}
+                    center:  currentLocation
                     });
                 
                     var labels = '123456789';
@@ -1103,7 +1103,7 @@ function ($scope, $stateParams) {
         //     {lat: -33.851702, lng: 151.216968}
         //     ]
         // 回傳語句
-        return "依照"+localStorage.getItem("username")+"的偏好，推薦您以下景點";
+        // return "依照"+localStorage.getItem("username")+"的偏好，推薦您以下景點";
         
     }
 
