@@ -845,8 +845,8 @@ function ($scope, $stateParams) {
                 // 由pos.coords取出latitude及longitude
                 var curLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                 // var curLatLng = new google.maps.LatLng(22.725829, 120.313716);
-            open("https://www.google.com.tw/maps/dir/"+curLatLng+"/"+SearchKey,'_self');
-        // }
+            open("https://www.google.com.tw/maps/dir/高海科大/楠梓翠屏"+SearchKey,'_self');
+            }
     }
 
     // ***************** Start00012 翻譯 *****************
@@ -998,7 +998,7 @@ function ($scope, $stateParams) {
                     var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
                     var map = new google.maps.Map(document.getElementById('mymap'), {
                     zoom: 13,
-                    center:  currentLocation
+                    center:  {lat: 22.725829, lng: 120.313716}
                     });
                 
                     var labels = '123456789';
@@ -1109,7 +1109,7 @@ function ($scope, $stateParams) {
 
     // ***************** Start00016 問自己是誰 *****************
     function Start00016(SearchKey) {
-        // 免程式
+        // 免寫程式
     }
 
     // ***************** Start00017 跳專題影片 *****************
@@ -1135,7 +1135,7 @@ function ($scope, $stateParams) {
                 }
             }
         });                   
-    }
+    }        
     
 
     // Map icon
