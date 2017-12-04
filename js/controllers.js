@@ -350,28 +350,6 @@ function ($scope, $stateParams) {
                 msg.text = val;
                 window.speechSynthesis.speak(msg);
                 break;
-
-                // --超級假資料--
-                // if (count % 2 == 0){
-                //     val = "依照"+username+"的偏好，推薦您以下景點：一、林邊光采濕地、二、光林村篩斗店、三、仁和村苦伕寮、四、林邊公園";
-                    
-                //     // val = "依照"+username+"的偏好，推薦您以下景點：一、福記古宅、二、慈濟宮、三、神農宮、四、慈真宮、五、安瀾宮";
-                //     // val = "推薦"+username+"以下景點，一 福記古宅、距離550公尺，二 慈濟宮、距離290公尺，三 東隆宮、距離10公里";
-                //     msg.text = val;
-                //     window.speechSynthesis.speak(msg);
-                //     Start00002("廟");
-                //     count = count +1;
-                // }else{
-                //     val = "依照"+username+"的偏好，推薦您以下景點：一、福記古宅、二、慈濟宮、三、神農宮、四、慈真宮、五、安瀾宮";
-                    
-                //     // val = "依照"+username+"的偏好，推薦您以下景點：一、林邊光采濕地、二、光林村篩斗店、三、仁和村苦伕寮、四、林邊公園";
-                //     // val = "推薦"+username+"以下景點，一 林邊光采濕地、距離43公里，二 海神宮風景區、距離59公里，三 大鵬灣國家風景區、距離45公里";
-                //     msg.text = val;
-                //     window.speechSynthesis.speak(msg);
-                //     Start00002("光");
-                //     count = count +1; 
-                // }
-                break;
             case "00016": //問自己是誰
                 val = "當然"+username+"，我可是你的貼身助理呢";
                 msg.text = val;
@@ -857,17 +835,17 @@ function ($scope, $stateParams) {
 
     // ***************** Start00011 導航 *****************
     function Start00011(SearchKey) {
-        // getGeolocation(); //取得使用者目前位罝
-        //     function getGeolocation() {
-        //         if (navigator && navigator.geolocation) {
-        //             navigator.geolocation.getCurrentPosition(parsePosition);
-        //         }
-        //     }
-        //     function parsePosition(pos) {
-                //由pos.coords取出latitude及longitude
-                // var curLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+        getGeolocation(); //取得使用者目前位罝
+            function getGeolocation() {
+                if (navigator && navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(parsePosition);
+                }
+            }
+            function parsePosition(pos) {
+                // 由pos.coords取出latitude及longitude
+                var curLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                 // var curLatLng = new google.maps.LatLng(22.725829, 120.313716);
-            open("https://www.google.com.tw/maps/dir/高海科大/楠梓翠屏"+SearchKey,'_self');
+            open("https://www.google.com.tw/maps/dir/"+curLatLng+"/"+SearchKey,'_self');
         // }
     }
 
@@ -1020,7 +998,7 @@ function ($scope, $stateParams) {
                     var currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
                     var map = new google.maps.Map(document.getElementById('mymap'), {
                     zoom: 13,
-                    center:  {lat: 22.725829, lng: 120.313716}
+                    center:  currentLocation
                     });
                 
                     var labels = '123456789';
@@ -1131,7 +1109,7 @@ function ($scope, $stateParams) {
 
     // ***************** Start00016 問自己是誰 *****************
     function Start00016(SearchKey) {
-        // 免寫程式
+        // 免程式
     }
 
     // ***************** Start00017 跳專題影片 *****************
@@ -1157,7 +1135,7 @@ function ($scope, $stateParams) {
                 }
             }
         });                   
-    }        
+    }
     
 
     // Map icon
