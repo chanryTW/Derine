@@ -1,2 +1,2 @@
 # chanryTW.github.io
-1061102 Update
+1061212 Update
