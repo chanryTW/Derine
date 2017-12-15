@@ -845,7 +845,7 @@ function ($scope, $stateParams) {
                 // 由pos.coords取出latitude及longitude
                 var curLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                 // var curLatLng = new google.maps.LatLng(22.725829, 120.313716);
-            open("https://www.google.com.tw/maps/dir/"+curLatLng+"/"+SearchKey,'_self');
+            open("https://www.google.com.tw/maps/dir/"+curLatLng+"/林邊"+SearchKey,'_self');
             }
     }
 
