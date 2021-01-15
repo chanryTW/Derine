@@ -1293,7 +1293,7 @@ function ($scope, $stateParams, $ionicPopup) {
             localStorage.setItem("LoginWay", "Signin"); // 登入方式標記為 首頁登入
             accountL.value="";
             pwdL.value="";
-            open("/#/menu/Derine",'_self');
+            open("/Derine/#/menu/Derine",'_self');
             // window.location.reload();
         }).catch(function(error) {
             var errorCode = error.code;
